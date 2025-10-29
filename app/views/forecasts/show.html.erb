@@ -1,0 +1,4 @@
+<%= form_tag forecast_path, method: :get do %>
+  <%= text_field_tag :address, params[:address], placeholder: "Enter your address" %>
+  <%= submit_tag "Get Forecast" %>
+<% end %>

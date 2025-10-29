@@ -35,6 +35,8 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   gem "rspec-rails", "~> 8.0.0"
+  gem "capybara", "~> 3.40.0"
+  gem "pry-rails"
 end
 
 group :development do
