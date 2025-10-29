@@ -21,6 +21,10 @@ gem "bootsnap", require: false
 # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 gem "thruster", require: false
 
+# OpenSSL 3.6 broke Ruby's bindings, see: https://github.com/ruby/openssl/issues/949
+# This gem line can be removed once we upgrade to Ruby >= 3.4.8
+gem 'openssl', '>= 3.3.1'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
