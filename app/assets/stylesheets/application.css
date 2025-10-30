@@ -8,3 +8,59 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+body {
+    max-width: 960px;
+    margin: 1em auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+form.address {
+    background-color: #eee;
+    border: 1px solid #333;
+    border-radius: 1em;
+    padding: 0.5em;
+}
+
+section.forecast {
+    ul {
+        padding-left: 0;
+        list-style: none;
+        li.period {
+            background-color: #eee;
+            border: 1px solid #333;
+            border-radius: 1em;
+            padding: 0 1em 0 1em;
+            margin-bottom: 0.5em;
+
+            small {
+                font-size: 0.7em;
+                font-weight: normal;
+                color: #999;
+            }
+
+            .icon {
+                float: left;
+                margin-right: 1em;
+            }
+
+            .temperature {
+                font-size: 2em;
+                clear: left;
+                margin: 0;
+            }
+        }
+    }
+}
+
+section.error {
+    background-color: #fcc;
+    border: 1px solid #f00;
+    color: #900;
+    border-radius: 1em;
+    padding: 0.5em;
+    margin-top: 0.5em;
+}
