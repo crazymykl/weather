@@ -110,6 +110,12 @@ GEM
     drb (2.2.3)
     erb (5.1.3)
     erubi (1.13.1)
+    faraday (2.14.0)
+      faraday-net_http (>= 2.0, < 3.5)
+      json
+      logger
+    faraday-net_http (3.4.1)
+      net-http (>= 0.5.0)
     globalid (1.3.0)
       activesupport (>= 6.1)
     i18n (1.14.7)
@@ -142,6 +148,8 @@ GEM
     mini_mime (1.1.5)
     minitest (5.26.0)
     msgpack (1.8.0)
+    net-http (0.6.0)
+      uri
     net-imap (0.5.12)
       date
       net-protocol
@@ -303,6 +311,8 @@ GEM
     unicode-emoji (4.1.0)
     uri (1.0.4)
     useragent (0.16.11)
+    weather_gov_api (0.4.0)
+      faraday (~> 2.0)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -334,6 +344,7 @@ DEPENDENCIES
   bundler-audit
   capybara (~> 3.40.0)
   debug
+  faraday (~> 2.14.0)
   importmap-rails
   openssl (>= 3.3.1)
   propshaft
@@ -344,6 +355,7 @@ DEPENDENCIES
   rubocop-rails-omakase
   thruster
   tzinfo-data
+  weather_gov_api (~> 0.4.0)
   web-console
 
 BUNDLED WITH

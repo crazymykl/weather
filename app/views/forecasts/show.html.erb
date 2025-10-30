@@ -1,4 +1,16 @@
-<%= form_tag forecast_path, method: :get do %>
+<%= form_tag forecast_path, method: :get, class: "address" do %>
+  <h1>Weather Forecast</h1>
+  <%= label_tag :address, "Street address, plus either zip code or city and state:" %>
   <%= text_field_tag :address, params[:address], placeholder: "Enter your address" %>
   <%= submit_tag "Get Forecast" %>
+  <small><%= link_to "Icon Guide", "https://www.weather.gov/forecast-icons" %></small>
+<% end %>
+
+
+<% if @forecast&.valid? %>
+  <%= render 'forecast', forecast: @forecast %>
+<% elsif params[:address].present? && @forecast&.errors.any? %>
+  <section class="error">
+    <%= @forecast.errors.full_messages.join(", ") %>
+  </section>
 <% end %>

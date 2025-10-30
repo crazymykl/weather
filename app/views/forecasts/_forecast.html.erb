@@ -1,0 +1,17 @@
+<section class="forecast">
+  <h2>Forecast for <%= @forecast.location.address %></h2>
+  <ul>
+    <% forecast.periods.each do |period| %>
+      <li class="period">
+        <h3 class="name">
+        <%= period.name %>
+        <small><%= period.start_time.to_fs(:short)
+          %>-<%= period.end_time.to_fs(:time) %></small>
+        </h3>
+        <%= image_tag period.icon, alt: period.short_forecast, class: "icon" %>
+        <span class="detailed"><%= period.detailed_forecast %></span>
+        <h4 class="temperature"><%= period.temperature %></h4>
+      </li>
+    <% end %>
+  </ul>
+</section>

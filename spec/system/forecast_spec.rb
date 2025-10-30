@@ -5,13 +5,31 @@ RSpec.describe "Forecast", type: :system do
     driven_by(:rack_test)
   end
 
-  let(:address) { "1 Infinite Loop, Cupertino, CA" }
+  let(:valid_address) { valid_location.address }
+  let(:invalid_address) { invalid_location.address }
 
-  it "displays the forecast for a given address" do
+  it "displays the address form" do
     visit forecast_path
-    fill_in "address", with: address
+
+    expect(page).to have_field("address")
+    expect(page).to have_button("Get Forecast")
+  end
+
+  it "displays the forecast for a valid address" do
+    visit forecast_path
+    fill_in "address", with: valid_address
     click_button "Get Forecast"
 
-    expect(page).to have_current_path(forecast_path(address: address, commit: "Get Forecast"))
+    expect(page).to have_css(".forecast")
+    expect(page).to have_content(/Forecast for/i)
+  end
+
+  it "displays an error an invalid address" do
+    visit forecast_path
+    fill_in "address", with: invalid_address
+    click_button "Get Forecast"
+
+    expect(page).to have_css(".error")
+    expect(page).to have_content(Location::ADDRESS_LOOKUP_ERROR)
   end
 end

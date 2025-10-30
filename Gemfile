@@ -23,7 +23,10 @@ gem "thruster", require: false
 
 # OpenSSL 3.6 broke Ruby's bindings, see: https://github.com/ruby/openssl/issues/949
 # This gem line can be removed once we upgrade to Ruby >= 3.4.8
-gem 'openssl', '>= 3.3.1'
+gem "openssl", ">= 3.3.1"
+
+gem "weather_gov_api", "~> 0.4.0"
+gem "faraday", "~> 2.14.0" # For Census API client
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
