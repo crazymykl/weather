@@ -17,6 +17,8 @@ class AddressLocator
 
   def self.call(address)
     location = Location.new(address:)
+    return location if address.blank?
+
     response = client.get(ENDPOINT, {
       address:,
       benchmark: BENCHMARK,
