@@ -10,7 +10,7 @@ class Location
 
   include ActiveModel::API
 
-  attr_accessor :address, :latitude, :longitude, :zip_code
+  attr_accessor :address, :latitude, :longitude, :zip_code, :fresh
   validates :address, presence: true
   validate :validate_address_parts, if: -> { address.present? }
 

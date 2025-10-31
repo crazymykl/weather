@@ -93,6 +93,7 @@ RSpec.configure do |config|
     begin
       VCR.turn_off!
       WebMock.allow_net_connect!
+      driven_by(:rack_test)
       example.run
     ensure
       WebMock.disable_net_connect!

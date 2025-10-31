@@ -25,6 +25,17 @@ RSpec.describe Forecast, type: :model do
       expect(forecast).to be_valid
     end
 
+    context "#shown_location" do
+      it "shows an approximate location when read from cache" do
+        expect(forecast.shown_location).to eq("06032 (Cached near 41.71°, -72.86°)")
+      end
+
+      it "shows the address for a fresh location" do
+        forecast.location.fresh = true
+        expect(forecast.shown_location).to eq(valid_location.address)
+      end
+    end
+
     it "presents forecast data split by period" do
       expect(forecast.periods.length).to eq(2)
       first, second = forecast.periods

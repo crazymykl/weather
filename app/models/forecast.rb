@@ -55,6 +55,15 @@ class Forecast
     data.dig("properties", "periods").to_a.map { Period.new(_1) }
   end
 
+  def shown_location
+    if location.fresh
+      location.address
+    else
+      "#{location.zip_code} (Cached near %0.2f°, %0.2f°)" % \
+        [ location.latitude, location.longitude ]
+    end
+  end
+
   private
 
   attr_reader :data
