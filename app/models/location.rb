@@ -20,6 +20,16 @@ class Location
     AddressLocator.(address)
   end
 
+  def normalized_address
+    address.to_s.upcase.split.join(" ")
+  end
+
+  def ==(other)
+    other.normalized_address == normalized_address && \
+     other.latitude == latitude && other.longitude == longitude && \
+     other.zip_code == zip_code
+  end
+
   private
 
   def validate_address_parts

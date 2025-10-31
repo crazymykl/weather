@@ -15,3 +15,5 @@ Using zip codes as cache keys is an awkward requirement, although it does narrow
 I could find no free API that mapped addresses directly to forecasts. Instead, we use the US Census API to map addresses to coordinates (and zip codes, since users can give city and state instead), which the Weather.gov API can use to retrieve forecasts.
 
 I chose to use basic CSS without a framework in the interest of time. I believe the app is still usable without any styles.
+
+I use the VCR gem to record and mock the HTTP requests in non-system tests. This allows the test suite to be run without internet access.

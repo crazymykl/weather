@@ -1,10 +1,10 @@
 module ExampleHelper
   def invalid_location
-    @_invalid_location ||= Location.new(address: "123 Fake St")
+    Location.new(address: "123 Fake St")
   end
 
   def valid_location
-    @_valid_location ||= Location.new(
+    Location.new(
       address: "1500 NEW BRITAIN AVE, FARMINGTON, CT, 06032",
       latitude: 41.713784491237,
       longitude: -72.861805345333,

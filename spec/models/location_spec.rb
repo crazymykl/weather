@@ -15,4 +15,14 @@ RSpec.describe Location, type: :model do
     expect(AddressLocator).to receive(:call).with(stub_address).and_return(valid_location)
     expect(Location.for_address(stub_address)).to eq(valid_location)
   end
+
+  it "#normalized_address" do
+    {
+      " !  fOo   B3ar  " => "! FOO B3AR",
+      "  " => "",
+      nil => ""
+    }.each do |address, expected|
+      expect(Location.new(address:).normalized_address).to eq(expected)
+    end
+  end
 end

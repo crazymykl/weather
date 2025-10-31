@@ -9,6 +9,8 @@ class ForecastDataFetcher
   end
 
   def self.call(location)
+    return {} unless location.valid?
+
     client.forecast(
       latitude: location.latitude&.round(MAX_PRECISION),
       longitude: location.longitude&.round(MAX_PRECISION)

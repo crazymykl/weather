@@ -26,7 +26,7 @@ class AddressLocator
     })
 
     if response.success?
-      location.attributes = response_attributes(response)
+      location.assign_attributes(response_attributes(response))
     end
 
     location

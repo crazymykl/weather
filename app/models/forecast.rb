@@ -48,7 +48,7 @@ class Forecast
 
   def initialize(location)
     @location = location
-    @data = valid? ? ForecastDataFetcher.(location) : {}
+    @data = ForecastDataFetcher.(location)
   end
 
   def periods

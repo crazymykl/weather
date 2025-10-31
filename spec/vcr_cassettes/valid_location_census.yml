@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=1500%20NEW%20BRITAIN%20AVE,%20FARMINGTON,%20CT,%2006032&benchmark=Public_AR_Current&format=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 30 Oct 2025 23:22:35 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '671'
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - DENY
+      Cache-Control:
+      - private, no-store
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1;mode=block
+      Vary:
+      - Origin
+    body:
+      encoding: UTF-8
+      string: '{"result":{"input":{"address":{"address":"1500 NEW BRITAIN AVE, FARMINGTON,
+        CT, 06032"},"benchmark":{"isDefault":true,"benchmarkDescription":"Public Address
+        Ranges - Current Benchmark","id":"4","benchmarkName":"Public_AR_Current"}},"addressMatches":[{"tigerLine":{"side":"R","tigerLineId":"604933291"},"coordinates":{"x":-72.861805345333,"y":41.713784491237},"addressComponents":{"zip":"06032","streetName":"NEW
+        BRITAIN","preType":"","city":"FARMINGTON","preDirection":"","suffixDirection":"","fromAddress":"1300","state":"CT","suffixType":"AVE","toAddress":"1598","suffixQualifier":"","preQualifier":""},"matchedAddress":"1500
+        NEW BRITAIN AVE, FARMINGTON, CT, 06032"}]}}'
+  recorded_at: Thu, 30 Oct 2025 23:22:35 GMT
+recorded_with: VCR 6.3.1
