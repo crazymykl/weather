@@ -316,8 +316,7 @@ GEM
     unicode-emoji (4.1.0)
     uri (1.1.0)
     useragent (0.16.11)
-    vcr (6.3.1)
-      base64
+    vcr (6.4.0)
     weather_gov_api (0.4.0)
       faraday (~> 2.0)
     web-console (4.2.1)
@@ -366,7 +365,7 @@ DEPENDENCIES
   rubocop-rails-omakase
   thruster
   tzinfo-data
-  vcr (~> 6.3)
+  vcr (~> 6.4)
   weather_gov_api (~> 0.4.0)
   web-console
   webmock (~> 3.26)
